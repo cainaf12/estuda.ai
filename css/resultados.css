@@ -1,0 +1,249 @@
+/* NORMALIZAÇÃO DO CSS */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* MAIN */
+main{
+  display: grid;
+}
+
+main p,
+main h2{
+  font-style: italic;
+}
+
+/* HEADER/LOGO */
+/* HEADER/LOGO */
+header {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  border-bottom: 5px solid black;
+}
+
+h1 {
+  background-color: white;
+  border-radius: 30px;
+  font-size: 45px;
+  color: black;
+}
+
+.logo {
+  background: #73B78E;
+  margin-bottom: 15px;
+  padding: 10px 9px;
+  border-radius: 43px;
+  position: relative;
+  width: 80px;
+  cursor: pointer;
+  margin-left: -130px;
+  margin-bottom: 30px;
+  transition: color 0.3s; /* Tempo de transição ajustado */
+  font-style: italic;
+}
+
+.logo a {
+  text-decoration: none;
+  color: black;
+  transition: color 1s; /* Tempo de transição ajustado */
+}
+
+.logo a:hover {
+  color: #547e65;
+}
+
+/* MAIN */
+/* TOPO */
+.acertos{
+  background-color: #B2BAFF;
+  width: 500px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  padding-left: 25px;
+  border-radius: 0px 20px 20px 0px;
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+#total_correct{
+  margin: 0px 5px 0px 5px;
+}
+
+#accuracy_percentage{
+  margin: 5px;
+}
+
+.porcen_acertos{
+  background-color: #968BDB;
+  width: 600px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  padding-left: 25px;
+  border-radius: 0px 20px 20px 0px;
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.card_topo-baixo{
+  display: flex;
+  align-items: center;
+  margin-left: 100px;
+}
+
+.card_topo-baixo img{
+  width: 250px;
+  position: relative;
+  top: 30px;
+  left: 50px;
+}
+
+/* GRAFICO */
+.card_topo-baixo p{
+  position: relative;
+  left: 400px;
+  bottom: 70px;
+}
+
+.grafico{
+  display: flex;
+  padding: 30px;
+  position: relative;
+  align-items: flex-end;
+}
+
+.barra{
+  width: 40px;
+  margin: 0px 20px 0px 20px;
+}
+
+.barra.num1{
+  height: 145px;
+}
+
+.barra.num2{
+  height: 250px;
+}
+
+.barra.num3{
+  height: 30px;
+}
+
+.barra.num4{
+  height: 100px;
+}
+
+.barra.num5{
+  height: 10px;
+}
+
+.barra.num6{
+  height: 60px;
+}
+
+.barra.num7{
+  height: 40px;
+}
+
+.barra.num8{
+  height: 310px;
+}
+
+.barra.num9{
+  height: 145px;
+}
+
+.barra.num10{
+  height: 250px;
+}
+
+.barra.num11{
+  height: 145px;
+}
+
+.barra.num1,.barra.num3,.barra.num5,.barra.num7,.barra.num9,.barra.num11{
+  background-color: #B3B6FF;
+}
+
+.barra.num2,.barra.num4,.barra.num6,.barra.num8,.barra.num10{
+  background-color: #484DB9;
+}
+
+#resetButton{
+  width: 200px;
+  height: 40px;
+  border: none;
+  background-color: #2EBB9A;
+  color: white;
+}
+
+/* MEIO */
+.card_meio{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px 100px 50px 100px;
+  border-top: 3px solid black;
+}
+
+/* BAIXO */
+.card_baixo{
+  display: flex;
+  border-top:3px solid black;
+}
+
+.card_img{
+  background: linear-gradient(150deg,#484DB9, #3D419C, #50BEA8, #202353);
+  width: 650px;
+  height: 360px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card_img img{
+  width: 350px;
+  position: relative;
+  left: 120px;
+}
+
+.card_acesso_tabela{
+  background-color: #B3B7FF;
+  color: white;
+  position: relative;
+  height: 250px;
+  width: 700px;
+  top: 60px;
+  left: 650px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: -1;
+  border-radius: 0px 20px 20px 0px;
+}
+
+.circulo{
+  position: relative;
+  background-color: white;
+  width: 150px;
+  height: 150px;
+  border-radius: 80px;
+}
+
+.link{
+  position: relative;
+  left: 1130px;
+  bottom: 120px;
+  background-color: #484DB9;
+  width: 110px;
+  height: 110px;
+  border-radius: 60px;
+}

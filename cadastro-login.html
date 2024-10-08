@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Login</title>
+    <link rel="stylesheet" href="./css/cadastro-login.css">
+</head>
+<body>
+    <main>
+        <div class="parte-esq">
+            <div class="logo">
+                <h1 class="titulo_circulo"><a href="./indexprincipal.html">ESTUD.ai</a></h1>
+            </div>
+
+            <div class="container-login">
+                <h2 class="titulo-login">Login</h2>
+                <div class="email-login">
+                    <label for="">Email:</label>
+                    <input type="text" id="login-email" placeholder="Coloque seu email">
+                </div>
+                <div class="senha-login">
+                    <label for="">Senha:</label>
+                    <input type="password" id="login-senha" placeholder="Coloque sua senha">
+                </div>
+                <div class="container-btn_login">
+                    <button class="btn-login" onclick="fazerLogin()">Login</button>
+                </div>
+                <div id="loginError" style="display:none; color:red;">Email ou senha incorretos!</div>
+            </div>
+        </div>
+        
+        <div class="parte-dir">
+            <div class="titulo-cad">
+                <h2>Cadastro</h2>
+            </div>
+            <div class="container-cad">
+                <div class="nome-cad">
+                    <label for="">Nome:</label>
+                    <input type="text" id="cad-nome" placeholder="Insira seu nome">
+                </div>
+                <div class="nascimento-cad">
+                    <label for="">Data de nascimento:</label>
+                    <input type="date" id="data_nascimento">
+                </div>
+                <div class="email-cad">
+                    <label for="">Email ou celular:</label>
+                    <input type="text" id="cad-email" placeholder="Coloque seu email ou telefone">
+                </div>
+                <div class="senha-cad">
+                    <label for="">Senha:</label>
+                    <input type="password" id="cad-senha" placeholder="Insira uma senha">
+                </div>
+                <div class="container-btn_cad">
+                    <button class="btn-cad" onclick="cadastrarUsuario()">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Função para cadastrar o usuário e redirecioná-lo automaticamente após o cadastro
+        function cadastrarUsuario() {
+            const nome = document.getElementById('cad-nome').value;
+            const dataNascimento = document.getElementById('data_nascimento').value;
+            const email = document.getElementById('cad-email').value;
+            const senha = document.getElementById('cad-senha').value;
+
+            if (nome && dataNascimento && email && senha) {
+                // Armazenar as informações no localStorage usando o email como chave
+                localStorage.setItem(email, JSON.stringify({
+                    nome: nome,
+                    dataNascimento: dataNascimento,
+                    email: email,
+                    senha: senha
+                }));
+                alert('Cadastro realizado com sucesso! Redirecionando...');
+                // Redirecionar o usuário automaticamente para a página principal
+                window.location.href = './indexprincipal.html';
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        }
+
+        // Função para fazer login do usuário
+        function fazerLogin() {
+            const emailLogin = document.getElementById('login-email').value;
+            const senhaLogin = document.getElementById('login-senha').value;
+
+            // Verificar se o email existe no localStorage
+            const usuarioCadastrado = localStorage.getItem(emailLogin);
+
+            if (usuarioCadastrado) {
+                const dadosUsuario = JSON.parse(usuarioCadastrado);
+
+                // Verificar se a senha está correta
+                if (dadosUsuario.senha === senhaLogin) {
+                    alert('Login bem-sucedido! Bem-vindo, ' + dadosUsuario.nome);
+                    window.location.href = './indexprincipal.html'; // Redireciona para a página principal
+                } else {
+                    document.getElementById('loginError').style.display = 'block';
+                }
+            } else {
+                document.getElementById('loginError').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
